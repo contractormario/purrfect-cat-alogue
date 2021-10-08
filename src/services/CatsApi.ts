@@ -33,13 +33,6 @@ function downvoteImage(imageId:any) {
   })
 }
 
-
-
-
-
-
-
-
 function favImage(imageId:any) {
   return axios.post('https://api.thecatapi.com/v1/favourites',
   {
@@ -79,9 +72,6 @@ function fetchFaves():any {
   })
 }
 
-
-
-
 function fetchVotes():any {
   return axios.get('https://api.thecatapi.com/v1/votes',
   {
@@ -93,10 +83,6 @@ function fetchVotes():any {
     return Promise.resolve(resp.data)
   })
 }
-
-
-
-
 
 function fetchImages():any {
   return axios.get('https://api.thecatapi.com/v1/images?limit=100',
