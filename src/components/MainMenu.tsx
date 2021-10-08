@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { RouteComponentProps, Link, navigate } from '@reach/router'
-import { AppBar, Box, Toolbar, Button, ImageList, ImageListItem, Grid, Skeleton } from '@mui/material'
+import { navigate } from '@reach/router'
+import { AppBar, Toolbar, Button } from '@mui/material'
 
 export function MainMenu() {
   return (

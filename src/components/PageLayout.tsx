@@ -1,8 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { RouteComponentProps, Link, navigate } from '@reach/router'
-import { AppBar, Box, Toolbar, Button, ImageList, ImageListItem, Grid, Skeleton } from '@mui/material'
-import { MainMenu, CatsList, CatsListRow, CatsListItem } from '.'
+import { Box } from '@mui/material'
 import styled from 'styled-components'
+import { MainMenu } from '.'
 
 export function PageLayout({ children }:any) {
   return (

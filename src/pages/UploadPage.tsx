@@ -1,24 +1,10 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react'
-import { Router, RouteComponentProps, Link, navigate } from '@reach/router'
-import AppBar from '@mui/material/AppBar'
-import Box from '@mui/material/Box'
-import Toolbar from '@mui/material/Toolbar'
-import Button from '@mui/material/Button'
-import CircularProgress from '@mui/material/CircularProgress'
-import Alert from '@mui/material/Alert'
-import AlertTitle from '@mui/material/AlertTitle'
-import { uploadImage } from '../services/CatsApi'
+import { useEffect, useState } from 'react'
+import { RouteComponentProps, navigate } from '@reach/router'
+import { Alert, AlertTitle, CircularProgress } from '@mui/material'
 import styled from 'styled-components'
 import { useDropzone } from 'react-dropzone'
+import { uploadImage } from '../services/CatsApi'
 import { PageLayout } from '../components/PageLayout'
-
-// function uploadImage(file:any) {
-//   return new Promise((resolve ,reject) => {
-//     setTimeout(() => {
-//       reject('Upload failed')
-//     }, 3000)
-//   })
-// }
 
 export function UploadPage(props: RouteComponentProps) {
   return (

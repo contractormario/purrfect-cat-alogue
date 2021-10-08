@@ -1,13 +1,6 @@
 import styled from 'styled-components'
 import { CatsListItem } from './CatsListItem'
 
-type CatImagesRowProps = {
-  images: any[],
-  onVoteUp: any,
-  onVoteDown: any,
-  onFavToggle: any
-}
-
 function CatsListRow({ images, onVoteUp, onVoteDown, onFavToggle }:CatImagesRowProps) {
   const imagesJsx = images.map((image:any) => {
     return <CatsListItem imageId={image.id} imageUrl={image.url} score={image.score} isFav={image.isFav} favId={image.favId} onVoteUp={onVoteUp} onVoteDown={onVoteDown} onFavToggle={onFavToggle} />
@@ -17,6 +10,13 @@ function CatsListRow({ images, onVoteUp, onVoteDown, onFavToggle }:CatImagesRowP
       {imagesJsx}
     </CatImagesRowDiv>
   )
+}
+
+type CatImagesRowProps = {
+  images: any[],
+  onVoteUp: any,
+  onVoteDown: any,
+  onFavToggle: any
 }
 
 const CatImagesRowDiv = styled.div`

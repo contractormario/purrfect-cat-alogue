@@ -1,21 +1,5 @@
-import { useState } from 'react'
 import styled from 'styled-components'
-import Paper from '@mui/material/Paper'
-import { FavButton } from './FavButton'
-import { CatScore } from './CatScore'
-import { VoteUpButton } from './VoteUpButton'
-import { VoteDownButton } from './VoteDownButton'
-
-type CatProps = {
-  imageId: any,
-  imageUrl: any,
-  score: any,
-  isFav: boolean,
-  favId: any,
-  onVoteUp: any,
-  onVoteDown: any,
-  onFavToggle: any
-}
+import { FavButton, CatScore, VoteUpButton, VoteDownButton } from '.'
 
 export function CatsListItem({ imageId, imageUrl, score, isFav, favId, onVoteUp, onVoteDown, onFavToggle }: CatProps) {
   return (
@@ -33,6 +17,17 @@ export function CatsListItem({ imageId, imageUrl, score, isFav, favId, onVoteUp,
       </ButtonsRow>
     </CatsListItemDiv>
   )
+}
+
+type CatProps = {
+  imageId: any,
+  imageUrl: any,
+  score: any,
+  isFav: boolean,
+  favId: any,
+  onVoteUp: any,
+  onVoteDown: any,
+  onFavToggle: any
 }
 
 const CatsListItemDiv = styled.div`

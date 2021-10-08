@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { RouteComponentProps, Link, navigate } from '@reach/router'
-import { AppBar, Box, Toolbar, Button, ImageList, ImageListItem, Grid, Skeleton } from '@mui/material'
-import { MainMenu, CatsList, CatsListRow, CatsListItem, PageLayout } from '../components'
+import { useEffect, useState } from 'react'
+import { RouteComponentProps } from '@reach/router'
+import { ImageListItem, Grid, Skeleton } from '@mui/material'
+import { CatsListRow, CatsListItem, PageLayout } from '../components'
 import { fetchImages, fetchVotes, fetchFaves, upvoteImage, downvoteImage, favImage, unfavImage } from '../services/CatsApi'
 import { useSnackbar } from 'notistack'
 
