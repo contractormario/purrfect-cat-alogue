@@ -6,7 +6,7 @@ import { fetchInitialGif, fetchRandomImage, fetchRandomGif, fetchImages, fetchVo
 import { useSnackbar } from 'notistack'
 import styled from 'styled-components'
 
-export function HomePage(props: RouteComponentProps) {
+export function BrowsePage(props: RouteComponentProps) {
   const { enqueueSnackbar, closeSnackbar } = useSnackbar()
   const [randomImage, setRandomImage] = useState<any>(null)
   const [isFetching, setIsFetching] = useState(false)
@@ -15,7 +15,7 @@ export function HomePage(props: RouteComponentProps) {
   const init = async () => {
     try {
       setIsFetching(true)
-      const randomImage = await fetchInitialGif()
+      const randomImage = await fetchRandomGif()
 
       setIsFetching(false)
       setRandomImage(randomImage as any)

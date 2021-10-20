@@ -1,14 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Router, RouteComponentProps, Link } from '@reach/router'
-import { HomePage, UploadPage } from './pages'
+import { Router } from '@reach/router'
+import { HomePage, BrowsePage, MyImagesPage, UploadPage } from './pages'
 
-function App() {
+export default function App() {
   return (
     <Router>
-      <HomePage path='/' />
-      <UploadPage path='/upload' />
+      <HomePage path='/'/>
+      <BrowsePage path='/browse'/>
+      <MyImagesPage path='/my-images'/>
+      <UploadPage path='/my-images/upload'/>
     </Router>
   );
 }
-
-export default App;

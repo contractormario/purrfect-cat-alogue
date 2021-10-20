@@ -1,8 +1,36 @@
 import axios from 'axios'
-import { CAT_API_KEY as API_KEY } from '../config'
+import { DOG_API_KEY as API_KEY } from '../config'
+
+function fetchInitialGif():any {
+  return Promise.resolve({
+    url: 'https://cdn2.thedogapi.com/images/BJUum6T4X.gif'
+  })
+}
+
+function fetchRandomGif():any {
+  // const initial = 'https://cdn2.thedogapi.com/images/rk9k4aTNm.gif'
+  return axios.get('https://api.thedogapi.com/v1/images/search?page=1&limit=1&mime_types=gif')
+  .then(function(resp) {
+    return Promise.resolve(resp.data[0])
+  })
+}
+
+function fetchRandomImage():any {
+  return axios.get('https://api.thedogapi.com/v1/images/search?page=1&limit=1')
+  .then(function(resp) {
+    return Promise.resolve(resp.data[0])
+  })
+}
+
+function fetchPublicImages():any {
+  return axios.get('https://api.thedogapi.com/v1/images/search?page=1&limit=1&mime_types=gif')
+  .then(function(resp) {
+    return Promise.resolve(resp.data)
+  })
+}
 
 function upvoteImage(imageId:any) {
-  return axios.post('https://api.thecatapi.com/v1/votes',
+  return axios.post('https://api.thedogapi.com/v1/votes',
   {
     image_id: imageId,
     value: 1
@@ -18,7 +46,7 @@ function upvoteImage(imageId:any) {
 }
 
 function downvoteImage(imageId:any) {
-  return axios.post('https://api.thecatapi.com/v1/votes',
+  return axios.post('https://api.thedogapi.com/v1/votes',
   {
     image_id: imageId,
     value: 0
@@ -34,7 +62,7 @@ function downvoteImage(imageId:any) {
 }
 
 function favImage(imageId:any) {
-  return axios.post('https://api.thecatapi.com/v1/favourites',
+  return axios.post('https://api.thedogapi.com/v1/favourites',
   {
     image_id: imageId
   },
@@ -49,7 +77,7 @@ function favImage(imageId:any) {
 }
 
 function unfavImage(imageId:any) {
-  return axios.delete(`https://api.thecatapi.com/v1/favourites/${imageId}`,
+  return axios.delete(`https://api.thedogapi.com/v1/favourites/${imageId}`,
   {
     headers: {
       'x-api-key': API_KEY
@@ -61,7 +89,7 @@ function unfavImage(imageId:any) {
 }
 
 function fetchFaves():any {
-  return axios.get('https://api.thecatapi.com/v1/favourites',
+  return axios.get('https://api.thedogapi.com/v1/favourites',
   {
     headers: {
       'x-api-key': API_KEY
@@ -73,7 +101,7 @@ function fetchFaves():any {
 }
 
 function fetchVotes():any {
-  return axios.get('https://api.thecatapi.com/v1/votes',
+  return axios.get('https://api.thedogapi.com/v1/votes',
   {
     headers: {
       'x-api-key': API_KEY
@@ -85,7 +113,7 @@ function fetchVotes():any {
 }
 
 function fetchImages():any {
-  return axios.get('https://api.thecatapi.com/v1/images?limit=100',
+  return axios.get('https://api.thedogapi.com/v1/images?limit=100',
   {
     headers: {
       'x-api-key': API_KEY
@@ -101,7 +129,7 @@ function uploadImage(file:any):any {
 
   formData.append('file', file)
 
-  return axios.post('https://api.thecatapi.com/v1/images/upload',
+  return axios.post('https://api.thedogapi.com/v1/images/upload',
   formData,
   {
     headers: {
@@ -114,6 +142,10 @@ function uploadImage(file:any):any {
 }
 
 export {
+  fetchInitialGif,
+  fetchRandomGif,
+  fetchRandomImage,
+  fetchPublicImages,
   fetchImages,
   fetchVotes,
   fetchFaves,

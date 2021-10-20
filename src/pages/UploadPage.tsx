@@ -3,7 +3,7 @@ import { RouteComponentProps, navigate } from '@reach/router'
 import { Alert, AlertTitle, CircularProgress } from '@mui/material'
 import styled from 'styled-components'
 import { useDropzone } from 'react-dropzone'
-import { uploadImage } from '../services/CatsApi'
+import { uploadImage } from '../services/DogsApi'
 import { PageLayout } from '../components/PageLayout'
 
 export function UploadPage(props: RouteComponentProps) {
